@@ -151,11 +151,11 @@ export default (options: IOptions): Transform => {
 			let filePath = file.path;
 
 			if (option.rename) {
-				if (typeof option.rename.extname === "string") {
-					this.emit("error", getError(`${file.path}: detected rename.extname option, but it is insecure since this plugin take care of the output file extension (changing it may compromise the result).`));
+				// if (typeof option.rename.extname === "string") {
+				// 	this.emit("error", getError(`${file.path}: detected rename.extname option, but it is insecure since this plugin take care of the output file extension (changing it may compromise the result).`));
 
-					continue;
-				}
+				// 	continue;
+				// }
 
 				filePath = rename(filePath, option.rename).toString();
 			}
